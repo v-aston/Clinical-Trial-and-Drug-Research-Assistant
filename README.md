@@ -6,6 +6,12 @@ This project is a production oriented Retrieval Augmented Generation (RAG) backe
 
 The application supports multi-source ingestion, chunking, embedding generation, vector retrieval, and answer generation through a FastAPI backend. It is built to demonstrate clean architecture, scalable service boundaries, and clear documentation of technical decisions and trade-offs.
 
+## 2-Minute Video Walkthrough
+
+[Video Walkthrough](https://drive.google.com/drive/folders/1kZCgpRhelX4u2m3IqdiHpbtUU97UwbHM?usp=sharing)
+
+Project overview, architecture decisions, challenges faced, and key learnings.
+
 ## Problem Statement
 
 Medical research queries often require evidence from multiple complementary sources. ClinicalTrials.gov provides structured trial records such as trial status, phase, interventions, and outcomes, while PubMed provides abstracts and research literature context. A useful assistant in this domain should retrieve evidence from both sources and generate answers grounded in those sources rather than relying on unsupported LLM recall.
