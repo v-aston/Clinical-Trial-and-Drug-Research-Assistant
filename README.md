@@ -1,4 +1,4 @@
-# Clinical Trial Drug Research Assistant
+# Clinical Trial and Drug Research Assistant
 
 ## Overview
 
@@ -33,6 +33,40 @@ The system follows a layered backend design:
 6. A retrieval service embeds the user question and performs similarity search.
 7. A query service builds a grounded prompt and calls the LLM.
 8. The API returns the answer with citation metadata.
+
+## Architecture Diagram
+
+```text
+External Sources
+  ├── PubMed
+  └── ClinicalTrials.gov
+         │
+         ▼
+   Source Connectors
+         │
+         ▼
+    Ingest Service
+         │
+         ├── Normalize documents
+         ├── Deduplicate
+         ├── Chunk content
+         └── Generate embeddings
+         │
+         ▼
+ PostgreSQL + pgvector
+         │
+         ▼
+  Retrieval Service
+         │
+         ▼
+    Query Service
+         │
+         ▼
+  LLM Response + Citations
+         │
+         ▼
+     FastAPI API
+```
 
 ## RAG Pipeline Explanation
 
